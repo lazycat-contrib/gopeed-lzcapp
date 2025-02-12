@@ -1,0 +1,40 @@
+{
+  "name": "Gopeed",
+  "package": "cloud.lazycat.app.gopeed",
+  "description": "Gopeed够快下载器",
+  "homepage": "https://gopeed.com",
+  "author": "GopeedLab",
+  "app_features": [
+    "background_task"
+  ],
+  "subdomain": "gopeed",
+  "version": "1.6.9",
+  "iconPath": "gopeed.png",
+  "composePath": "docker-compose.yaml",
+  "unsupported_platforms": [],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "gopeed_9999_9999": {
+      "use": true,
+      "type": "http",
+      "path": "/",
+      "targetPath": "n"
+    }
+  },
+  "image_liwei2633_gopeed": {
+    "originalImage": "liwei2633/gopeed",
+    "pushTarget": "lazycat",
+    "newImageName": "registry.lazycat.cloud/czyt/liwei2633/gopeed:25246e9b541de449",
+    "timestamp": "2025-02-12T04:06:22.874Z"
+  },
+  "gopeed_volume_/app/Downloads_action": "emptyDir",
+  "gopeed_volume_/app/Downloads_location": "app_data",
+  "gopeed_volume_/app/storage_action": "emptyDir",
+  "gopeed_volume_/app/storage_location": "app_data",
+  "image_liwei2633_gopeed_v1.6.8": {
+    "originalImage": "liwei2633/gopeed:v1.6.8",
+    "pushTarget": "lazycat",
+    "newImageName": "registry.lazycat.cloud/czyt/liwei2633/gopeed:53080d4adb3ba9f1",
+    "timestamp": "2025-02-12T04:20:23.135Z"
+  }
+}
