@@ -1,26 +1,40 @@
-lzc-sdk-version: "0.1"
-name: Gopeed够快下载器
+name: Gopeed
 package: cloud.lazycat.app.gopeed
-version: 1.6.8
+version: 1.8.1
+min_os_version: 1.3.8
 description: 一款现代化的下载器
 homepage: https://gopeed.com
 author: GopeedLab
 application:
-  subdomain: gopeed
-  background_task: true
-  multi_instance: false
-  gpu_accel: false
-  kvm_accel: false
-  usb_accel: false
-  routes:
-    - /=http://gopeed.cloud.lazycat.app.gopeed.lzcapp:9999/
+    subdomain: gopeed
+    background_task: true
+    multi_instance: true
+
+    routes:
+        - /=http://gopeed:9999/
 services:
-  gopeed:
-    image: registry.lazycat.cloud/czyt/liwei2633/gopeed:53080d4adb3ba9f1
-    environment:
-      - PUID=0
-      - PGID=0
-      - UMASK=22
-    binds:
-      - /lzcapp/var/Downloads:/app/Downloads
-      - /lzcapp/var/storage:/app/storage
+    gopeed:
+        # liwei2633/gopeed:v1.8.1
+        image: registry.lazycat.cloud/czyt/liwei2633/gopeed:fa316c1cfa6cd31d
+        environment:
+            - PUID=0
+            - PGID=0
+            - UMASK=22
+        binds:
+            - /lzcapp/run/mnt/home/下载:/app/Downloads
+            - /lzcapp/var/storage:/app/storage
+
+ext_config:
+    enable_document_access: true
+    enable_media_access: true
+
+locales:
+    zh:
+        name: "Gopeed"
+        description: "开源、轻量、原生，支持（HTTP、BitTorrent、Magnet 等）协议下载。"
+    zh_CN:
+        name: "Gopeed"
+        description: "开源、轻量、原生，支持（HTTP、BitTorrent、Magnet 等）协议下载。"
+    en:
+        name: "Gopeed"
+        description: "A modern download manager that supports all platforms. Built with Golang and Flutter."
