@@ -10,8 +10,9 @@ application:
     background_task: true
     multi_instance: true
 
-    routes:
-        - /=http://gopeed:9999/
+    upstreams:
+        - location: /
+          backend: http://gopeed:9999/
 services:
     gopeed:
         # liwei2633/gopeed:v1.8.1
