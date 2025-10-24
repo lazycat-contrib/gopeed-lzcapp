@@ -1,0 +1,12 @@
+params:
+  - id: download_dir_name
+    type: string
+    name: "download directory name under user document directory"
+    description: "the gopeed will download the data to the dir, you can set it to 'Downloads' or '下载'"
+    default_value: "Downloads"
+
+locales:
+  zh:
+    download_dir_name:
+      name: "下载目录名称"
+      description: "gopeed将下载文件到指定目录，你可以设置为Downloads或者下载目录"

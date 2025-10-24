@@ -1,41 +1,38 @@
 name: Gopeed
 package: cloud.lazycat.app.gopeed
-version: 1.8.1
+version: 1.8.2
 min_os_version: 1.3.8
 description: 一款现代化的下载器
 homepage: https://gopeed.com
 author: GopeedLab
 application:
-    subdomain: gopeed
-    background_task: true
-    multi_instance: true
+  subdomain: gopeed
+  background_task: true
+  multi_instance: true
 
-    upstreams:
-        - location: /
-          backend: http://gopeed:9999/
+  upstreams:
+    - location: /
+      backend: http://gopeed:9999/
 services:
-    gopeed:
-        # liwei2633/gopeed:v1.8.1
-        image: registry.lazycat.cloud/czyt/liwei2633/gopeed:fa316c1cfa6cd31d
-        environment:
-            - PUID=0
-            - PGID=0
-            - UMASK=22
-        binds:
-            - /lzcapp/run/mnt/home/Downloads:/app/Downloads
-            - /lzcapp/var/storage:/app/storage
+  gopeed:
+    # liwei2633/gopeed:v1.8.2
+    image: registry.lazycat.cloud/czyt/liwei2633/gopeed:51136218bf545ef3
+    environment:
+      - PUID=0
+      - PGID=0
+      - UMASK=22
+    binds:
+      - /lzcapp/run/mnt/home/{{.U.download_dir_name}}:/app/Downloads
+      - /lzcapp/var/storage:/app/storage
 
 ext_config:
-    enable_document_access: true
-    enable_media_access: true
+  enable_document_access: true
+  enable_media_access: true
 
 locales:
-    zh:
-        name: "Gopeed"
-        description: "开源、轻量、原生，支持（HTTP、BitTorrent、Magnet 等）协议下载。"
-    zh_CN:
-        name: "Gopeed"
-        description: "开源、轻量、原生，支持（HTTP、BitTorrent、Magnet 等）协议下载。"
-    en:
-        name: "Gopeed"
-        description: "A modern download manager that supports all platforms. Built with Golang and Flutter."
+  zh:
+    name: "Gopeed"
+    description: "开源、轻量、原生，支持（HTTP、BitTorrent、Magnet 等）协议下载。"
+  en:
+    name: "Gopeed"
+    description: "A modern download manager that supports all platforms. Built with Golang and Flutter."
