@@ -1,6 +1,6 @@
 name: Gopeed
 package: cloud.lazycat.app.gopeed
-version: 1.8.2
+version: 1.8.3
 min_os_version: 1.3.8
 description: 一款现代化的下载器
 homepage: https://gopeed.com
@@ -15,8 +15,8 @@ application:
       backend: http://gopeed:9999/
 services:
   gopeed:
-    # liwei2633/gopeed:v1.8.2
-    image: registry.lazycat.cloud/czyt/liwei2633/gopeed:51136218bf545ef3
+    # liwei2633/gopeed:v1.8.3
+    image: registry.lazycat.cloud/czyt/liwei2633/gopeed:cee0040350f0efab
     environment:
       - PUID=0
       - PGID=0
