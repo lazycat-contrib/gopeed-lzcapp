@@ -1,0 +1,15 @@
+package: cloud.lazycat.app.gopeed
+version: 1.9.3
+name: Gopeed
+description: 一款现代化的下载器
+min_os_version: "1.5.0"
+homepage: https://gopeed.com
+author: GopeedLab
+
+locales:
+  zh:
+    name: "Gopeed"
+    description: "开源、轻量、原生，支持（HTTP、BitTorrent、Magnet 等）协议下载。"
+  en:
+    name: "Gopeed"
+    description: "A modern download manager that supports all platforms. Built with Golang and Flutter."
