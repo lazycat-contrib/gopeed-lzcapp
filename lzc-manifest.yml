@@ -2,14 +2,14 @@ application:
   subdomain: gopeed
   background_task: true
   multi_instance: true
-
   upstreams:
     - location: /
       backend: http://gopeed:9999/
 services:
   gopeed:
     # liwei2633/gopeed:v1.9.3
-    image: registry.lazycat.cloud/czyt/liwei2633/gopeed:05ed0159dea90dcb
+    # upstream: docker.io/liwei2633/gopeed:v1.9.3
+    image: registry.lazycat.cloud/czyt/liwei2633/gopeed:a709d200718eed9a
     environment:
       - PUID=0
       - PGID=0
@@ -17,7 +17,6 @@ services:
     binds:
       - /lzcapp/run/mnt/home/{{.U.download_dir_name}}:/app/Downloads
       - /lzcapp/var/storage:/app/storage
-
 ext_config:
   enable_document_access: true
   enable_media_access: true
