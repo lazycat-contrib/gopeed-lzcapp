@@ -8,8 +8,8 @@ application:
 services:
   gopeed:
     # liwei2633/gopeed:v1.9.3
-    # upstream: docker.io/liwei2633/gopeed:v1.9.3
-    image: registry.lazycat.cloud/czyt/liwei2633/gopeed:a709d200718eed9a
+    # upstream: docker.io/liwei2633/gopeed:v2.0.0
+    image: registry.lazycat.cloud/czyt/liwei2633/gopeed:74fd9be8fb6449d4
     environment:
       - PUID=0
       - PGID=0
